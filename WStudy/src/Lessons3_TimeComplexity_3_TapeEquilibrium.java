@@ -146,4 +146,32 @@ public class Lessons3_TimeComplexity_3_TapeEquilibrium {
         }
         return Collections.min(list);
     }
+    
+    /**
+    *https://app.codility.com/demo/results/trainingPA4Z6P-J43/
+    */
+        public int solution5(int[] A) {
+        // write your code in Java SE 8
+        int sum = 0;
+        int ibeforeSum = 0;
+        int iafterSum = 0;
+        List<Integer> list = new ArrayList<>();
+
+        for (int eachInt : A) {
+            sum += eachInt;
+        }
+
+        for (int i=1; i<A.length; i++) {
+            ibeforeSum += A[i-1];
+            iafterSum = sum - ibeforeSum;
+            int absGap = Math.abs(ibeforeSum - iafterSum);
+            list.add(absGap);
+
+        }
+        
+        return Collections.min(list);
+    }
+    
+    
+  
 }
